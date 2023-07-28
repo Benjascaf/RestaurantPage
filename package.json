@@ -1,0 +1,27 @@
+{
+  "name": "restaurantpage",
+  "version": "1.0.0",
+  "description": "First project trying out webpack, from The Odin Project. Attempting to serve a webpage where the html is created trough js and correct use of webpack and  ES6 modules",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Benjascaf/RestaurantPage.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Benjascaf/RestaurantPage/issues"
+  },
+  "homepage": "https://github.com/Benjascaf/RestaurantPage#readme",
+  "devDependencies": {
+    "css-loader": "^6.8.1",
+    "inline-source-map": "^0.6.2",
+    "style-loader": "^3.3.3",
+    "webpack": "^5.88.2",
+    "webpack-cli": "^5.1.4"
+  }
+}
