@@ -2,25 +2,10 @@ import musselsImage from "./imgs/mussels.jpeg";
 export default function (loadMenuPage) {
   const mainContainer = document.querySelector("#content");
   mainContainer.classList.add("home-page");
-  const topContainer = document.createElement("div");
-  topContainer.classList.add("top");
-  const welcomeContainer = document.createElement("div");
-  welcomeContainer.classList.add("welcome");
+  mainContainer.append(createTop(loadMenuPage), createBottom());
+}
 
-  const welcomeMessage = document.createElement("h1");
-  welcomeMessage.innerHTML =
-    "Welcome to our restaurant,<br /> where delight is guarrnateeds";
-
-  const menuBtn = document.createElement("button");
-  menuBtn.textContent = "Menu";
-  menuBtn.addEventListener("click", loadMenuPage);
-
-  welcomeContainer.append(welcomeMessage, menuBtn);
-
-  const muussels = new Image();
-  muussels.src = musselsImage;
-  topContainer.append(welcomeContainer, muussels);
-
+function createBottom() {
   const bottomContainer = document.createElement("div");
   bottomContainer.classList.add("bottom");
   const aboutUsContainer = document.createElement("div");
@@ -33,6 +18,27 @@ export default function (loadMenuPage) {
 
   aboutUsContainer.append(aboutUsHeader, aboutUsText);
   bottomContainer.append(aboutUsContainer);
+  return bottomContainer;
+}
 
-  mainContainer.append(topContainer, bottomContainer);
+function createTop(loadPage) {
+  const topContainer = document.createElement("div");
+  topContainer.classList.add("top");
+  const welcomeContainer = document.createElement("div");
+  welcomeContainer.classList.add("welcome");
+
+  const welcomeMessage = document.createElement("h1");
+  welcomeMessage.innerHTML =
+    "Welcome to our restaurant,<br /> where delight is guaranteed";
+
+  const menuBtn = document.createElement("button");
+  menuBtn.textContent = "Menu";
+  menuBtn.addEventListener("click", loadPage);
+
+  welcomeContainer.append(welcomeMessage, menuBtn);
+
+  const muussels = new Image();
+  muussels.src = musselsImage;
+  topContainer.append(welcomeContainer, muussels);
+  return topContainer;
 }

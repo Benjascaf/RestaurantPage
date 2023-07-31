@@ -4,7 +4,7 @@ import outsideView from "./imgs/restaurant-outside.jpg";
 
 const ContactInfo = [
   {
-    header: "find Us At:",
+    header: "Find Us At:",
     info: "Our Location 123",
   },
   {

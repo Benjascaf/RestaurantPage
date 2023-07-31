@@ -5,29 +5,31 @@ import menu from "./menu.js";
 import contact from "./contact.js";
 
 const mainContainer = document.querySelector("#content");
-document.querySelector("body").insertBefore(
-  navBar(
-    () => {},
-    () => {},
-    () => {}
-  ),
-  mainContainer
-);
-// function loadHomePage() {
-//   clearMainContainer();
-//   home(loadMenuPage);
-// }
+document
+  .querySelector("body")
+  .insertBefore(
+    navBar(loadHomePage, loadMenuPage, loadContactPage),
+    mainContainer
+  );
 
-// function loadMenuPage() {
-//   clearMainContainer();
-//   menu();
-// }
+function loadHomePage() {
+  clearMainContainer();
+  home(loadMenuPage);
+}
 
-// function clearMainContainer() {
-//   const mainContainer = document.querySelector("#content");
-//   mainContainer.replaceChildren();
-//   mainContainer.classList.remove(...mainContainer.classList);
-// }
-// loadHomePage();
+function loadMenuPage() {
+  clearMainContainer();
+  menu();
+}
 
-contact();
+function loadContactPage() {
+  clearMainContainer();
+  contact();
+}
+
+function clearMainContainer() {
+  const mainContainer = document.querySelector("#content");
+  mainContainer.replaceChildren();
+  mainContainer.classList.remove(...mainContainer.classList);
+}
+loadHomePage();

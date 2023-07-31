@@ -1,10 +1,9 @@
-import Icon from "./imgs/food.png";
 export default function (loadHomePage, loadMenuPage, loadContactPage) {
   const navBar = document.createElement("div");
   navBar.classList.add("header");
 
-  const myIcon = new Image();
-  myIcon.src = Icon;
+  const myIcon = document.createElement("i");
+  myIcon.classList.add("fa-solid", "fa-bowl-food");
 
   const buttonList = document.createElement("ul");
 
